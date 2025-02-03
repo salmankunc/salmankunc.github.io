@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday, Sayang! 🎂💕</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=Caveat&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #ffe4e1;
+            text-align: center;
+            font-family: 'Bubblegum Sans', cursive;
+            color: #ff69b4;
+        }
+        h1 {
+            font-size: 3em;
+            margin-top: 50px;
+            text-shadow: 2px 2px #ffb6c1;
+        }
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px auto;
+            width: 80%;
+            max-width: 400px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        button {
+            background-color: #ff69b4;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            border-radius: 10px;
+            cursor: pointer;
+            font-family: 'Caveat', cursive;
+        }
+        button:hover {
+            background-color: #ff1493;
+        }
+        .hidden {
+            display: none;
+        }
+        .video-container {
+            margin-top: 20px;
+        }
+        footer {
+            margin-top: 30px;
+            font-size: 0.9em;
+            color: #d14784;
+        }
+        .marquee {
+            font-family: 'Caveat', cursive;
+            font-size: 1.5em;
+            color: #ff1493;
+            white-space: nowrap;
+            overflow: hidden;
+            width: 100%;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <marquee class="marquee">🎉💕 Happy Birthday Sayang kuu Araa! Semoga hari-harimu penuh kebahagiaan!. AAAKKKKUUUUUU KANGEENNNNNNNNNNNNNNNNNNNNNNN 💕🎂</marquee>
+
+    <h1>Happy Birthday, Sayang kuu Araa! 🎉💕</h1>
+    <div class="card">
+        <p>Selamat ulang tahun cintaku! 🎂💖</p>
+        <button onclick="showMessage()">Klik untuk kejutan 🎁</button>
+        <p id="message" class="hidden">
+            CIEEEE ULTAHHHHH!!!🎂💖. Kamu apa kabar sayang kuu Araa? Aku di sini baik-baik saja. 
+            Selamat ulang tahun yaa 💖, semoga kamu sehat selalu yaww dan semoga kamu menjadi anak yang baik. 
+            Maaf ya kalau aku bisa nya cuma ini doang. Aku sayang banget sama kamu! jangan tinggalin aku yaaa dalam kesunyian dan kehampaan 😘💖
+        </p>
+    </div>
+    <div class="video-container">
+        <iframe width="360" height="215" src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=1" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+    <footer>
+        &copy; 2025 Dibuat dengan 💖 oleh Shalman
+    </footer>
+
+    <script>
+        function showMessage() {
+            document.getElementById('message').classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
