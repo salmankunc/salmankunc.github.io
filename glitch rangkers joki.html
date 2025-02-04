@@ -5,42 +5,101 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Jasa Joki Mobile Legends terpercaya dengan harga bersahabat dan layanan cepat. Tingkatkan rank Anda sekarang!">
     <title>Glitch Rankers</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Orbitron', sans-serif;
             margin: 0;
             padding: 0;
-            background: #1c1c1c;
-            color: #fff;
+            background: #0a0a0a;
+            color: #0ff;
+            text-shadow: 0 0 10px #0ff;
+        }
+        
+        /* Animasi Loading */
+        #loading {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+        .loading-text {
+            font-size: 2rem;
+            color: #0ff;
+            text-shadow: 0 0 20px #0ff;
+            animation: flicker 1.5s infinite alternate;
+        }
+        @keyframes flicker {
+            0% { opacity: 1; }
+            100% { opacity: 0.3; }
         }
         header {
-            background: linear-gradient(90deg, #ff8c00, #ff0080);
-            color: #fff;
+            background: linear-gradient(90deg, #ff0000, #0000ff);
             text-align: center;
             padding: 2rem 0;
-            position: relative;
+            box-shadow: 0 0 15px #ff0000;
         }
         header h1 {
-            font-size: 3rem;
+            font-size: 2.5rem;
             margin: 0;
         }
-        header p {
-            font-size: 1.2rem;
+        .navbar {
+            display: flex;
+            justify-content: center;
+            background: #222;
+            padding: 0.5rem 0;
+            box-shadow: 0 0 10px #ff0000;
+        }
+        .navbar li {
+            list-style: none;
+            margin: 0 1.5rem;
+        }
+        .navbar a {
+            color: #0ff;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s, text-shadow 0.3s;
+        }
+        .navbar a:hover {
+            color: #ff0;
+            text-shadow: 0 0 15px #ff0;
+        }
+        section {
+            padding: 2rem;
+            text-align: center;
+        }
+        #pricing table {
+            width: 80%;
+            margin: 1rem auto;
+            border-collapse: collapse;
+            background: rgba(255, 0, 0, 0.1);
+            box-shadow: 0 0 10px #ff0000;
+        }
+        #pricing th, #pricing td {
+            border: 1px solid #ff0000;
+            padding: 0.8rem;
+            text-align: center;
+        }
+        #pricing th {
+            background: #ff0000;
+            color: #000;
         }
         .running-text {
-            background: #000;
-            color: #ff8c00;
+            background: #111;
+            color: #ff0;
             font-size: 1rem;
-            letter-spacing: 1px;
             padding: 0.5rem 0;
             position: fixed;
             bottom: 0;
             width: 100%;
             overflow: hidden;
-            z-index: 999;
             text-align: center;
+            box-shadow: 0 0 10px #ff0;
         }
         .running-text span {
             display: inline-block;
@@ -48,117 +107,44 @@
             animation: scrollText 15s linear infinite;
         }
         @keyframes scrollText {
-            0% {
-                transform: translateX(100%);
-            }
-            100% {
-                transform: translateX(-100%);
-            }
-        }
-        .navbar {
-            display: flex;
-            justify-content: center;
-            background: #333;
-            padding: 0.5rem 0;
-            margin: 0;
-        }
-        .navbar li {
-            list-style: none;
-            margin: 0 1rem;
-        }
-        .navbar a {
-            color: #fff;
-            text-decoration: none;
-            font-size: 1rem;
-            transition: color 0.3s;
-        }
-        .navbar a:hover {
-            color: #ff8c00;
-        }
-        section {
-            padding: 2rem;
-            text-align: center;
-        }
-        #services ul {
-            list-style: none;
-            padding: 0;
-        }
-        #services ul li {
-            margin: 0.5rem 0;
-        }
-        #pricing table {
-            width: 100%;
-            max-width: 600px;
-            margin: 1rem auto;
-            border-collapse: collapse;
-        }
-        #pricing th, #pricing td {
-            border: 1px solid #fff;
-            padding: 0.5rem;
-            text-align: center;
-        }
-        #pricing th {
-            background: #ff8c00;
-        }
-        blockquote {
-            font-style: italic;
-            background: #333;
-            padding: 1rem;
-            border-left: 5px solid #ff8c00;
-            margin: 1rem auto;
-            max-width: 600px;
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
         }
         footer {
-            background: #333;
-            color: #fff;
+            background: #111;
+            color: #0ff;
             text-align: center;
             padding: 1rem 0;
-            position: relative;
-        }
-        footer p {
-            margin: 0;
-            font-size: 0.9rem;
-            z-index: 1000;
-            position: relative;
+            box-shadow: 0 0 10px #00ffff;
         }
         a {
-            color: #ff8c00;
+            color: #ff0;
             text-decoration: none;
         }
         a:hover {
-            text-decoration: underline;
+            text-shadow: 0 0 15px #ff0;
         }
-        .gameplay-section {
-            background: #000;
-            padding: 2rem;
-            color: #fff;
-        }
-        .gameplay-section h2 {
-            margin-bottom: 1rem;
-        }
-        .gameplay-video {
-            display: flex;
-            justify-content: center;
-            margin-top: 1rem;
-        }
-        .gameplay-video iframe {
-            border: none;
-            width: 80%;
-            height: 400px;
-        }
+    </style>
+    <script>
+        window.onload = function() {
+            setTimeout(() => {
+                document.getElementById('loading').style.display = 'none';
+            }, 3000);
+        };
+    </script>
+</head>
+<body>
+    <div id="loading">
+        <div class="loading-text">Loading...</div>
+    </div>
+    
     </style>
 </head>
 <body>
     <header>
-        <div class="container">
-            <h1>Glitch Rankers</h1>
-            <p>Meningkatkan rank Anda dengan cepat dan aman!</p>
-        </div>
+        <h1>Glitch Rankers</h1>
+        <p>Meningkatkan rank Anda dengan cepat dan aman!</p>
     </header>
-
-    <div class="running-text">
-        <span>🎮 Rank Up Cepat dan Aman Bersama Kami! Mulai dari Rp 3,500 per Bintang 🎮. 🌟 Pelayanan Profesional, Rank Anda Dijamin Naik dengan Mudah! 🌟.</span>
-    </div>
 
     <nav>
         <ul class="navbar">
@@ -166,113 +152,45 @@
             <li><a href="#pricing">Harga</a></li>
             <li><a href="#testimonials">Testimoni</a></li>
             <li><a href="#contact">Kontak</a></li>
-            <li><a href="#gameplay">Gameplay</a></li>
         </ul>
     </nav>
 
-    <section id="services">
-        <div class="container">
-            <h2>Layanan Kami</h2>
-            <ul>
-                <li>Peningkatan rank dari Warrior hingga Mythical Glory</li>
-                <li>Joki pertandingan Classic dan Rank</li>
-                <li>Joki misi harian dan event</li>
-            </ul>
-        </div>
-    </section>
-
     <section id="pricing">
-        <div class="container">
-            <h2>Harga</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Rank</th>
-                        <th>Harga Per Bintang</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Master</td>
-                        <td>Rp 3,500</td>
-                    </tr>
-                    <tr>
-                        <td>Grandmaster</td>
-                        <td>Rp 4,500</td>
-                    </tr>
-                    <tr>
-                        <td>Epic</td>
-                        <td>Rp 6,500</td>
-                    </tr>
-                    <tr>
-                        <td>Legend</td>
-                        <td>Rp 8,000</td>
-                    </tr>
-                    <tr>
-                        <td>Mythic</td>
-                        <td>Rp 16,500</td>
-                    </tr>
-                    <tr>
-                        <td>Mythic Honor</td>
-                        <td>Rp 19,000</td>
-                    </tr>
-                    <tr>
-                        <td>Mythic Glory</td>
-                        <td>Rp 25,000</td>
-                    </tr>
-                    <tr>
-                        <td>Mythic Immortal</td>
-                        <td>Rp 28,000</td>
-                    </tr>
-                    <tr>
-                        <td>Nge-Troll</td>
-                        <td>Rp 5,000</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+        <h2>Harga</h2>
+        <table>
+            <tr><th>Rank</th><th>Harga Per Bintang</th></tr>
+            <tr><td>Master</td><td>Rp 3,500</td></tr>
+            <tr><td>Grandmaster</td><td>Rp 4,500</td></tr>
+            <tr><td>Epic</td><td>Rp 6,500</td></tr>
+            <tr><td>Legend</td><td>Rp 8,000</td></tr>
+            <tr><td>Mythic Grading</td><td>Rp 18,000</td></tr>
+            <tr><td>Mythic</td><td>Rp 16,500</td></tr>
+            <tr><td>Mythic Honor</td><td>Rp 19,000</td></tr>
+            <tr><td>Mythic Glory</td><td>Rp 25,000</td></tr>
+            <tr><td>Mythic Immortal</td><td>Rp 28,000</td></tr>
+            <tr><td>Nge-Troll</td><td>Rp 5,000</td></tr>
+        </table>
     </section>
 
     <section id="testimonials">
-        <div class="container">
-            <h2>Testimoni</h2>
-            <blockquote>
-                <p>"Jasa joki ini sangat terpercaya! Dalam waktu singkat, rank saya naik dari Master ke Mythic. Recommended banget!"</p>
-                <cite>- Andi</cite>
-            </blockquote>
-            <blockquote>
-                <p>"Pelayanan cepat dan aman. Saya akan kembali menggunakan jasa ini di masa depan."</p>
-                <cite>- Siti</cite>
-            </blockquote>
-        </div>
-    </section>
-
-    <section id="gameplay" class="gameplay-section">
-        <div class="container">
-            <h2>Gameplay Mobile Legends</h2>
-            <p>Lihat cuplikan permainan kami untuk memahami strategi dan kemampuan kami dalam meningkatkan rank Anda.</p>
-            <div class="gameplay-video">
-                <iframe src="https://www.youtube.com/embed/BppG2Ih1CZ4?si=ngIl7yet_RqnD3Ym" title="Gameplay Mobile Legends"></iframe>
-            </div>
-        </div>
+        <h2>Testimoni</h2>
+        <p>"Joki cepat dan aman, rank saya naik dalam sehari!"</p>
+        <p>"Harga terjangkau, pelayanan profesional!"</p>
+        <p>"Pasti balik lagi pakai jasa ini!"</p>
     </section>
 
     <section id="contact">
-        <div class="container">
-            <h2>Hubungi Kami</h2>
-            <p>Untuk informasi lebih lanjut atau pemesanan, silakan hubungi kami melalui:</p>
-            <ul>
-                <li>WhatsApp: <a href="https://wa.me/+6288214461235">+62 882-1446-1235</a></li>
-                <li>Email: <a href="-">Comming Soon</a></li>
-                <li>Instagram: <a href="-">Comming Soon</a></li>
-            </ul>
-        </div>
+        <h2>Hubungi Kami</h2>
+        <p>WhatsApp: <a href="https://wa.me/+6288214461235">+62 882-1446-1235</a></p>
+        <p>Pembayaran via Dana: 082214461235</p>
     </section>
 
+    <div class="running-text">
+        <span>🚀 Naik Rank dengan Cepat! Harga Mulai Rp 3,500 per Bintang! Pembayaran via Dana 🚀</span>
+    </div>
+
     <footer>
-        <div class="container">
-            <p>&copy; 2025 Glitch Rankers. Salmon Group. All Rights Reserved.</p>
-        </div>
+        <p>&copy; 2025 Glitch Rankers. All Rights Reserved.</p>
     </footer>
 </body>
 </html>
