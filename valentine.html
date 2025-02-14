@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Day Surprise</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+        
+        body {
+            background-color: #ffe6f2;
+            text-align: center;
+            font-family: 'Dancing Script', cursive;
+            overflow: hidden;
+        }
+        h1 {
+            color: #ff4d6d;
+            font-size: 3rem;
+            margin-top: 50px;
+        }
+        .falling {
+            position: absolute;
+            top: -100px;
+            animation: fall 5s linear infinite;
+        }
+        @keyframes fall {
+            0% {
+                transform: translateY(-100px);
+            }
+            100% {
+                transform: translateY(100vh);
+            }
+        }
+    </style>
+</head>
+<body>
+    <audio id="background-music" autoplay loop>
+        <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    
+    <h1>Selamat Hari Kasih Sayang! ❤️</h1>
+    <h2>Kamu adalah cahaya dalam hidupku, semoga cinta kita selalu abadi 💖🍫🧚‍♀️</h2>
+    
+    <div>
+        <iframe id="youtube-video" width="560" height="315" src="https://www.youtube.com/embed/dUoU9I4zD3U?autoplay=1&mute=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </div>
+    
+    <script>
+        document.addEventListener("click", function() {
+            document.getElementById("background-music").play();
+            
+            let iframe = document.getElementById("youtube-video");
+            iframe.src = "https://www.youtube.com/embed/dUoU9I4zD3U?autoplay=1";
+        });
+        
+        function createElement(content) {
+            const element = document.createElement("div");
+            element.classList.add("falling");
+            element.innerHTML = content;
+            element.style.left = Math.random() * window.innerWidth + "px";
+            element.style.animationDuration = Math.random() * 3 + 2 + "s";
+            element.style.position = "absolute";
+            element.style.fontSize = Math.random() * 20 + 20 + "px";
+            document.body.appendChild(element);
+            setTimeout(() => { element.remove(); }, 5000);
+        }
+        setInterval(() => createElement("🌸"), 300);
+        setInterval(() => createElement("🍫"), 500);
+        setInterval(() => createElement("🧚‍♀️"), 700);
+    </script>
+</body>
+</html>
