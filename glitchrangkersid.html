@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Glitch Rankers - Joki ML</title>
+  <style>
+    /* Global Styles */
+    body {
+      font-family: 'Orbitron', sans-serif;
+      background: #0a0a0a;
+      color: #00ffcc;
+      margin: 0;
+      padding: 0;
+    }
+
+    .running-text {
+      width: 100%;
+      background: #00ffcc;
+      color: #0a0a0a;
+      padding: 10px 0;
+      font-weight: bold;
+      font-size: 1rem;
+      overflow: hidden;
+      white-space: nowrap;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+    }
+
+    .running-text span {
+      display: inline-block;
+      padding-left: 100%;
+      animation: marquee 10s linear infinite;
+    }
+
+    @keyframes marquee {
+      from {
+        transform: translateX(0);
+      }
+      to {
+        transform: translateX(-100%);
+      }
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 60px auto 0;
+      padding: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 3rem;
+      color: #00ffcc;
+      text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc;
+      animation: glow 2s infinite alternate;
+    }
+
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc;
+      }
+      to {
+        text-shadow: 0 0 20px #00ffcc, 0 0 40px #00ffcc;
+      }
+    }
+
+    .service-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      margin-top: 30px;
+    }
+
+    .service-card {
+      background: #1a1a1a;
+      border: 2px solid #00ffcc;
+      border-radius: 10px;
+      padding: 20px;
+      width: 200px;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .service-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px #00ffcc;
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+      margin-top: 10px;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background: #1a1a1a;
+      border: 2px solid #00ffcc;
+      border-radius: 10px;
+      padding: 10px;
+      z-index: 1;
+      width: 200px;
+      max-height: 150px;
+      overflow-y: auto;
+      text-align: left;
+    }
+
+    .dropdown-content p {
+      margin: 5px 0;
+      color: #ccc;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .service-card button {
+      background: #00ffcc;
+      color: #0a0a0a;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-family: 'Orbitron', sans-serif;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .service-card button:hover {
+      background: #00ccaa;
+    }
+
+    .whatsapp-button {
+      background: #25D366;
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      border-radius: 5px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      margin-top: 30px;
+      transition: background 0.3s;
+    }
+
+    .whatsapp-button:hover {
+      background: #128C7E;
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="running-text">
+    <span>🔥 Promo Spesial! Pesan Joki Sekarang dan Dapatkan Diskon Menarik! 🔥 Pembayaran untuk saat ini hanya bisa ovo</span>
+  </div>
+  <div class="container">
+    <h1>Glitch Rankers</h1>
+    <p>Boost Rank Mobile Legends Anda dengan Cepat dan Aman!</p>
+
+    <div class="service-list">
+      <div class="service-card">
+        <h3>Rank Boost</h3>
+        <p>Dari Epic ke Mythic</p>
+        <p>comming soon</p>
+        <button onclick="orderService('Rank Boost')">Pesan Sekarang</button>
+      </div>
+      <div class="service-card">
+        <h3>Win Rate Boost</h3>
+        <p>Tingkatkan Win Rate Anda</p>
+        <p>comming soon</p>
+        <button onclick="orderService('Win Rate Boost')">Pesan Sekarang</button>
+      </div>
+      <div class="service-card">
+        <h3>Joki Per Bintang</h3>
+        <p>Pilih tingkat rank</p>
+        <div class="dropdown">
+          <button>Lihat Harga</button>
+          <div class="dropdown-content">
+            <p>Master: Rp 3.500</p>
+            <p>Grandmaster: Rp 4.500</p>
+            <p>Epic: Rp 6.500</p>
+            <p>Legend: Rp 8.000</p>
+            <p>Mythic Grading: Rp 18.000</p>
+            <p>Mythic: Rp 16.500</p>
+            <p>Mythic Honor: Rp 19.000</p>
+            <p>Mythic Glory: Rp 25.000</p>
+            <p>Mythic Immortal: Rp 28.000</p>
+            <p>Nge-Troll: Rp 5.000</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <button class="whatsapp-button" onclick="openWhatsApp()">Hubungi Kami via WhatsApp</button>
+  </div>
+
+  <script>
+    function openWhatsApp() {
+      const message = "Halo mimin Glitch Rankers, saya ingin memesan.";
+      const whatsappUrl = `https://wa.me/6282164787740?text=${encodeURIComponent(message)}`;
+      window.location.href = whatsappUrl;
+    }
+  </script>
+</body>
+</html>
